@@ -30,7 +30,7 @@ if (cluster.isMaster) {
 
     ck.compressed = false;
 
-    if (addresses.has(ck.publicAddress)) {
+    if (!addresses.has(ck.publicAddress)) {
       process.stdout.write("\x07");
       console.log("\x1b[32m%s\x1b[0m", ">> Success: " + ck.publicAddress);
       console.log("\x1b[32m%s\x1b[0m", ">> Success Pass: " + ck.privateWif);
